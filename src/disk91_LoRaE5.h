@@ -80,6 +80,10 @@
 #define __DSKLORAE5_NONDCZONE_DC         0         // Eventually force a duty cycle when a zone does not have one
 
 
+#ifndef LOGSERIAL
+#define LOGSERIAL Uart
+#endif
+
 // ==========================================================
 // Disk91_LoRaE5
 class Disk91_LoRaE5 {
@@ -127,7 +131,7 @@ protected:
     uint32_t              estimatedDCMs;    // Next communication autorization for when DC management is not delegated to module (DC zone only)
 
     __HWSERIAL_T        * e5Uart;           // link to hw serial for E5 communications
-    Serial_             * debugUart;        // link to serial used for debugginf
+    LOGSERIAL             * debugUart;        // link to serial used for debugginf
     SoftwareSerial      * e5SwUart;         // link to the sw serial for E5 communications
     bool                  isHwSerial;       // true when a hw serial is used
 
@@ -182,11 +186,11 @@ public:
 
     Disk91_LoRaE5(
         uint16_t   atTimeoutMs,          // Default timeout in Ms for AT command execution
-        Serial_  * logSerial = NULL      // When set, the library debug is enabled               
+        LOGSERIAL  * logSerial = NULL      // When set, the library debug is enabled               
     );
 
     Disk91_LoRaE5(
-        Serial_  * logSerial = NULL      // When set, the library debug is enabled               
+        LOGSERIAL  * logSerial = NULL      // When set, the library debug is enabled               
     );
 
     ~Disk91_LoRaE5();

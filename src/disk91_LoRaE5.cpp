@@ -225,7 +225,7 @@ bool Disk91_LoRaE5::haveStoredConfig( // Returns true when a configuration has a
 
 Disk91_LoRaE5::Disk91_LoRaE5(
         uint16_t  atTimeoutMs,               // Default timeout for the AT command processing
-        Serial_ * logSerial                  // When set, the library debug is enabled               
+        LOGSERIAL * logSerial                  // When set, the library debug is enabled               
 ){
     this->debugUart = logSerial;
     this->runningCommand = false;
@@ -235,7 +235,7 @@ Disk91_LoRaE5::Disk91_LoRaE5(
 }
 
 Disk91_LoRaE5::Disk91_LoRaE5(
-        Serial_ * logSerial                  // When set, the library debug is enabled               
+        LOGSERIAL * logSerial                  // When set, the library debug is enabled               
 ){
     this->debugUart = logSerial;
     this->runningCommand = false;
