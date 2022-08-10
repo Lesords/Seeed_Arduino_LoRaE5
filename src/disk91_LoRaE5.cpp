@@ -1152,6 +1152,9 @@ bool Disk91_LoRaE5::processATResponse() {
                 }
             }
         }
+#ifdef SEEED_K1100_DEV_KIT
+        delay(10);
+#endif // SEEED_K1100_DEV_KIT
     }
     return false;
 }
