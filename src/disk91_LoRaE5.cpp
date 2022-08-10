@@ -1121,6 +1121,7 @@ bool Disk91_LoRaE5::setup_sensecap(  // Setup the LoRaWAN stack
 ) {
     char _cmd[128];
     bool ret = true;
+    // sendATCommand("AT+ID=DevEui","","+ID: ERROR","",1000,false,NULL);
     sendATCommand("AT+UART=TIMEOUT,0","+UART: TIMEOUT","","",this->atTimeout,false, NULL);
     // Setup region
     if ( this->currentZone != zone  ) { 

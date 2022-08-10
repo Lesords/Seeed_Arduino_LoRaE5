@@ -79,9 +79,14 @@
 
 #define __DSKLORAE5_NONDCZONE_DC         0         // Eventually force a duty cycle when a zone does not have one
 
-
+#ifdef SEEED_K1100_DEV_KIT
+#ifndef LOGSERIAL
+#define LOGSERIAL Adafruit_USBD_CDC
+#endif
+#else
 #ifndef LOGSERIAL
 #define LOGSERIAL Uart
+#endif
 #endif
 
 // ==========================================================
